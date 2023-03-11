@@ -12,7 +12,7 @@ class Profile(models.Model):
     username = models.CharField(max_length=200, null=True, blank=True)
     about = models.TextField(null=True, blank=True)
     location = models.CharField(max_length=200, null=True, blank=True)
-    # profile_img = models.ImageField(null=True, blank=True, upload_to='profile_img/', default='profile_img/user-default.png')
+    profile_img = models.ImageField(null=True, blank=True, upload_to='profile_img/', default='profile_img/user-default.png')
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
@@ -32,7 +32,7 @@ class Product(models.Model):
     title = models.CharField(max_length=250)
     price = models.IntegerField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    # img = models.ImageField(null=True, blank=True, default='default.jpg')
+    img = models.ImageField(null=True, blank=True, default='default.jpg')
     vote = models.BooleanField(default=False)
     target_date = models.DateTimeField()
     created = models.DateTimeField(auto_now_add=True)
