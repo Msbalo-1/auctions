@@ -66,15 +66,15 @@ def index(request):
 
 
 def auctions(request):
-    product = Product.objects.all()
-    context = {'product': product}
-    return render(request, 'auctions/all-auctions.html', context)
+    products = Product.objects.all()
+    context = {'products': products}
+    return render(request, 'auctions/products.html', context)
 
 
 def auction(request, pk):
     productobj = Product.objects.get(id=pk)
     context = {'product': productobj}
-    return render(request, 'auction/auction-detail.html', context)
+    return render(request, 'auctions/single_product.html', context)
 
 
 

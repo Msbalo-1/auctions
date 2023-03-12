@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e30a2524-ab98-43f1-9a49-f36a8dea5d24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/auctions/templates/auctions/products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctions/templates/auctions/single_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/all-auctions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/auction-detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/views.py" afterDir="false" />
@@ -26,6 +32,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -33,12 +46,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Mmd0bM3BTZhTGjRTqLE8tdq3HS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -52,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678376470196</updated>
-      <workItem from="1678376489071" duration="8488000" />
+      <workItem from="1678376489071" duration="21578000" />
     </task>
     <servers />
   </component>
