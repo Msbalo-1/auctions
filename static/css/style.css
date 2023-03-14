@@ -69,6 +69,6 @@ a{
     margin-top: 150px !important;
 }
 
-.signup-form, .login-form{
+.signup-form, .login-form, .form{
     box-shadow: 5px 2px 20px rgb(0 0 0 / 4%);
 }

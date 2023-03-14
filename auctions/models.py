@@ -34,7 +34,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
     img = models.ImageField(null=True, blank=True, default='default.jpg')
     vote = models.BooleanField(default=False)
-    target_date = models.DateTimeField()
+    target_date = models.DateTimeField(null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 

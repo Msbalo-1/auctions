@@ -2,30 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e30a2524-ab98-43f1-9a49-f36a8dea5d24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/auctions/templates/auctions/products.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auctions/templates/auctions/single_product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctions/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctions/templates/auctions/delete_forms.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auctions/templates/auctions/product_forms.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/all-auctions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/auction-detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auctions/templates/auctions/single_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/templates/auctions/single_product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auctions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auctions/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/commerce/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/templates/auctions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/templates/auctions/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/templates/auctions/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/templates/auctions/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/auctions/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/commerce/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -68,7 +58,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678376470196</updated>
-      <workItem from="1678376489071" duration="21578000" />
+      <workItem from="1678376489071" duration="30345000" />
+      <workItem from="1678822806289" duration="9541000" />
     </task>
     <servers />
   </component>
