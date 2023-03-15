@@ -12,7 +12,7 @@ class ProductForms(ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProductForms, self).__init__(*args, **kwargs)
 
-        # for key, value in self.fields.items():
-        #     value.widget.attrs.update({'class': 'input'})
+        for key, value in self.fields.items():
+            value.widget.attrs.update({'class': 'form-control'})
 
-        self.fields['title'].widget.attrs.update({'class': 'input'})
+        # self.fields['title'].widget.attrs.update({'class': 'form-control'})

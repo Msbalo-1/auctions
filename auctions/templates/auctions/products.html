@@ -5,249 +5,104 @@
 
 {% block content %}
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<!--<table>-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <th>ID</th>-->
+<!--            <th>Title</th>-->
+<!--            <th>Description</th>-->
+<!--            <th></th>-->
+<!--            <th></th>-->
+<!--        </tr>-->
+<!--    </thead>-->
 
-<h1>WELCOME</h1>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
+<!--    <tbody>-->
 
-    <tbody>
+<!--    {% for item in products %}-->
+<!--    <tr>-->
+<!--        <td><a href="{% url 'product' item.id %}">{{item.id}}</a></td>-->
 
-    {% for item in products %}
-    <tr>
-        <td><a href="{% url 'product' item.id %}">{{item.id}}</a></td>
+<!--        <td>{{item.title}}</td>-->
 
-        <td>{{item.title}}</td>
+<!--        <td>{{item.description|slice:100}}</td>-->
 
-        <td>{{item.description|slice:100}}</td>
+<!--        <td><a href="{% url 'edit_product' item.id %}">EDIT</a></td>-->
 
-        <td><a href="{% url 'edit_product' item.id %}">EDIT</a></td>
+<!--        <td><a href="{% url 'delete_product' item.id %}">DELETE</a></td>-->
 
-        <td><a href="{% url 'delete_product' item.id %}">DELETE</a></td>
-
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--    </tbody>-->
+<!--</table>-->
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+   <!-- Header Section -->
+    <div class="container-fluid bg-danger py-5 text-white">
+        <div class="row pt-5">
+            <div class="col-12 col-lg-10">
+                <h1 class="display-5 fw-bold ms-0 ps-0 ms-md-5 ps-md-5 pt-3">Active Listings</h1>
+            </div>
+        </div>
+    </div>
 
-
-<!--   &lt;!&ndash; Header Section &ndash;&gt;-->
-<!--    <div class="container-fluid bg-danger py-5 text-white">-->
-<!--        <div class="row pt-5">-->
-<!--            <div class="col-12 col-lg-10">-->
-<!--                <h1 class="display-5 fw-bold ms-0 ps-0 ms-md-5 ps-md-5 pt-3">Active Listings</h1>-->
-<!--            </div>-->
+<!--<section class="hero-section text-center">-->
+<!--      <div class="container container&#45;&#45;narrow">-->
+<!--        <div class="hero-section__box">-->
+<!--          <h2>Search for <span>Projects</span></h2>-->
 <!--        </div>-->
-<!--    </div>-->
 
-<!--    &lt;!&ndash; Live Auction &ndash;&gt;-->
-<!--    <div class="container-fluid">-->
-
-<!--      <div class="row mx-5 mb-5 p-3">-->
-<!--        &lt;!&ndash; i think if you are gonna have multiple items, continous html blocks would be unhealthy, so you can use whater=ver function you have under your sleeves to replicate one column from  &ndash;&gt;-->
-<!--        &lt;!&ndash; Here ...Start &ndash;&gt;-->
-<!--        <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">-->
-<!--          <div class=" p-3 auction border border-outline-1">-->
-<!--            <div class="auction-photo">-->
-<!--              <img src="/static/images/live-auc1.png" alt="auction-1" class="img-fluid">-->
-<!--              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>-->
+<!--        <div class="hero-section__search">-->
+<!--          <form id="searchForm" class="form" action="#" method="get">-->
+<!--            <div class="form__field">-->
+<!--              <label for="formInput#search">Search By Products </label>-->
+<!--              <input class="input input&#45;&#45;text" id="formInput#search" type="text" name="search_query"-->
+<!--                placeholder="Search by Project Title"  value=""/>-->
 <!--            </div>-->
-<!--            <div class="auction-details">-->
-<!--              <h3 class="text-start fs-4">Brand New royal Enfield 250 CC For special Sale</h3>-->
 
-<!--              <div class="auctioner my-3 d-flex justify-content-between">-->
-<!--                <div class="user d-flex align-items-center">-->
-<!--                  <img src="/static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">-->
-<!--                  <p class="">By Sara Alexa</p>-->
-<!--                </div>-->
-
-<!--                <h4 class="text-danger">$6,000</h4>-->
-<!--              </div>-->
-<!--              <div class="auction-action d-flex align-items-center justify-content-between">-->
-
-<!--                <button class="btn btn-md btn-danger">Place a Bid</button>-->
-
-<!--                <div class="action-btns d-flex justify-content-between">-->
-<!--                  <i class="fa fa-2x text-secondary fa-solid fa-heart me-3"></i>-->
-<!--                  <i class="fa fa-2x  fa-solid fa-ellipsis-v"></i>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+<!--            <input class="btn btn&#45;&#45;sub btn&#45;&#45;lg" type="submit" value="Search" />-->
+<!--          </form>-->
 <!--        </div>-->
-<!--        &lt;!&ndash; To Here ...Stop... then you can delete these from below... be sure to collapse the blocks to have a better view &ndash;&gt;-->
-
-<!--        <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">-->
-<!--          <div class=" p-3 auction border border-outline-1">-->
-<!--            <div class="auction-photo">-->
-<!--              <img src="/static/images/live-auc2.png" alt="auction-2" class="img-fluid">-->
-<!--              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>-->
-<!--            </div>-->
-<!--            <div class="auction-details">-->
-<!--              <h3 class="text-start fs-4">Wedding wow Exclusive Cupple Ring (S2022)</h3>-->
-
-<!--              <div class="auctioner my-3 d-flex justify-content-between">-->
-<!--                <div class="user d-flex align-items-center">-->
-<!--                  <img src="/static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">-->
-<!--                  <p class="">By Sara Alexa</p>-->
-<!--                </div>-->
-
-<!--                <h4 class="text-danger">$6,000</h4>-->
-<!--              </div>-->
-<!--              <div class="auction-action d-flex align-items-center justify-content-between">-->
-
-<!--                <button class="btn btn-md btn-danger">Place a Bid</button>-->
-
-<!--                <div class="action-btns d-flex justify-content-between">-->
-<!--                  <i class="fa fa-2x text-secondary fa-solid fa-heart me-3"></i>-->
-<!--                  <i class="fa fa-2x  fa-solid fa-ellipsis-v"></i>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">-->
-<!--          <div class=" p-3 auction border border-outline-1">-->
-<!--            <div class="auction-photo">-->
-<!--              <img src="/static/images/live-auc3.png" alt="auction-3" class="img-fluid">-->
-<!--              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>-->
-<!--            </div>-->
-<!--            <div class="auction-details">-->
-<!--              <h3 class="text-start fs-4">Toyota AIGID A Class Hatchback Sale</h3>-->
-
-<!--              <div class="auctioner my-3 d-flex justify-content-between">-->
-<!--                <div class="user d-flex align-items-center">-->
-<!--                  <img src="/static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">-->
-<!--                  <p class="">By Sara Alexa</p>-->
-<!--                </div>-->
-
-<!--                <h4 class="text-danger">$6,000</h4>-->
-<!--              </div>-->
-<!--              <div class="auction-action d-flex align-items-center justify-content-between">-->
-
-<!--                <button class="btn btn-md btn-danger">Place a Bid</button>-->
-
-<!--                <div class="action-btns d-flex justify-content-between">-->
-<!--                  <i class="fa fa-2x text-secondary fa-solid fa-heart me-3"></i>-->
-<!--                  <i class="fa fa-2x  fa-solid fa-ellipsis-v"></i>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">-->
-<!--          <div class=" p-3 auction border border-outline-1">-->
-<!--            <div class="auction-photo">-->
-<!--              <img src="/static/images/live-auc4.png" alt="auction-4" class="img-fluid">-->
-<!--              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>-->
-<!--            </div>-->
-<!--            <div class="auction-details">-->
-<!--              <h3 class="text-start fs-4">Havit HV-G61 USB Black Double Game With Vibrat</h3>-->
-
-<!--              <div class="auctioner my-3 d-flex justify-content-between">-->
-<!--                <div class="user d-flex align-items-center">-->
-<!--                  <img src="/static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">-->
-<!--                  <p class="">By Sara Alexa</p>-->
-<!--                </div>-->
-
-<!--                <h4 class="text-danger">$6,000</h4>-->
-<!--              </div>-->
-<!--              <div class="auction-action d-flex align-items-center justify-content-between">-->
-
-<!--                <button class="btn btn-md btn-danger">Place a Bid</button>-->
-
-<!--                <div class="action-btns d-flex justify-content-between">-->
-<!--                  <i class="fa fa-2x text-secondary fa-solid fa-heart me-3"></i>-->
-<!--                  <i class="fa fa-2x  fa-solid fa-ellipsis-v"></i>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">-->
-<!--          <div class=" p-3 auction border border-outline-1">-->
-<!--            <div class="auction-photo">-->
-<!--              <img src="/static/images/live-auc5.png" alt="auction-5" class="img-fluid">-->
-<!--              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>-->
-<!--            </div>-->
-<!--            <div class="auction-details">-->
-<!--              <h3 class="text-start fs-4">Brand New Honda CBR 600 RR For Sale (2022)</h3>-->
-
-<!--              <div class="auctioner my-3 d-flex justify-content-between">-->
-<!--                <div class="user d-flex align-items-center">-->
-<!--                  <img src="/static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">-->
-<!--                  <p class="">By Sara Alexa</p>-->
-<!--                </div>-->
-
-<!--                <h4 class="text-danger">$6,000</h4>-->
-<!--              </div>-->
-<!--              <div class="auction-action d-flex align-items-center justify-content-between">-->
-
-<!--                <button class="btn btn-md btn-danger">Place a Bid</button>-->
-
-<!--                <div class="action-btns d-flex justify-content-between">-->
-<!--                  <i class="fa fa-2x text-secondary fa-solid fa-heart me-3"></i>-->
-<!--                  <i class="fa fa-2x  fa-solid fa-ellipsis-v"></i>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">-->
-<!--          <div class=" p-3 auction border border-outline-1">-->
-<!--            <div class="auction-photo">-->
-<!--              <img src="/static/images/live-auc6.png" alt="auction-6" class="img-fluid">-->
-<!--              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>-->
-<!--            </div>-->
-<!--            <div class="auction-details">-->
-<!--              <h3 class="text-start fs-4">IPhone 11 Pro Max All Variants Available For Sale</h3>-->
-
-<!--              <div class="auctioner my-3 d-flex justify-content-between">-->
-<!--                <div class="user d-flex align-items-center">-->
-<!--                  <img src="/static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">-->
-<!--                  <p class="">By Sara Alexa</p>-->
-<!--                </div>-->
-
-<!--                <h4 class="text-danger">$6,000</h4>-->
-<!--              </div>-->
-<!--              <div class="auction-action d-flex align-items-center justify-content-between">-->
-
-<!--                <button class="btn btn-md btn-danger">Place a Bid</button>-->
-
-<!--                <div class="action-btns d-flex justify-content-between">-->
-<!--                  <i class="fa fa-2x text-secondary fa-solid fa-heart me-3"></i>-->
-<!--                  <i class="fa fa-2x  fa-solid fa-ellipsis-v"></i>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; delete to here &ndash;&gt;-->
-
 <!--      </div>-->
-<!--    </div>-->
+<!--    </section>-->
+    <!-- Live Auction -->
+    <div class="container-fluid">
+
+      <div class="row mx-5 mb-5 p-3">
+
+          {% for product in products %}
+        <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">
+          <div class=" p-3 auction border border-outline-1">
+            <div class="auction-photo"><a href="{% url 'product' product.id %}">
+                <img src="{{product.img.url}}" alt="auction-1" class="img-fluid"></a>
+              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>
+            </div>
+            <div class="auction-details">
+              <h3 class="text-start fs-4"><a href="{% url 'product' product.id %}">{{product.title}}</a></h3>
+
+              <div class="auctioner my-3 d-flex justify-content-between">
+                <div class="user d-flex align-items-center">
+                  <img src="/static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">
+                  <p class="">By Sara Alexa</p>
+                </div>
+
+                <h4 class="text-danger">${{product.price}}</h4>
+              </div>
+              <div class="auction-action d-flex align-items-center justify-content-between">
+
+                <button class="btn btn-md btn-danger">Place a Bid</button>
+
+                <div class="action-btns d-flex justify-content-between">
+                  <i class="fa fa-2x text-secondary fa-solid fa-heart me-3">{{product.vote}}</i>
+                  <i class="fa fa-2x  fa-solid fa-ellipsis-v"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
 {% endblock content%}
