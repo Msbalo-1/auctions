@@ -63,6 +63,6 @@ from .models import Profile
 
 
 
-def account(request):
-    return render(request)
+def profile(request, ):
+    return render(request, 'users/user_profile.html')
 

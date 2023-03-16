@@ -1,31 +1,22 @@
-
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.urls import reverse
-from django.db import IntegrityError
 from .models import Product
 from .forms import ProductForms
 
-
-
-
-
-
 def index(request):
-    return render(request, "auctions/index.html")
-
+    # order = Order.objects.all()
+    context = {}
+    return render(request, "auctions/index.html", context)
 
 def auctions(request):
     products = Product.objects.all()
     context = {'products': products}
     return render(request, 'auctions/products.html', context)
 
-
 def auction(request, pk):
     productobj = Product.objects.get(id=pk)
     context = {'product': productobj}
     return render(request, 'auctions/single_product.html', context)
-
 
 def createProduct(request):
     form = ProductForms()
@@ -34,7 +25,6 @@ def createProduct(request):
         if form.is_valid():
             form.save()
             return redirect('products')
-
 
     context = {'form': form}
     return render(request, 'auctions/product_forms.html', context)
