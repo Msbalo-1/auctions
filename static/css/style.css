@@ -30,7 +30,7 @@ a{
 }
 .auction-photo:hover{
     transform: scale(1.05);
-    
+
 }
 .auction-photo{
     transition-duration: 1.5;

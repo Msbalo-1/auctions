@@ -64,5 +64,7 @@ from .models import Profile
 
 
 def profile(request, ):
-    return render(request, 'users/user_profile.html')
+    # profile = pass
+    # context = {'profile': profile}
+    return render(request, 'users/user_profile.html', )
 

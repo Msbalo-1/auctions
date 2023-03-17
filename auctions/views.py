@@ -27,7 +27,7 @@ def createProduct(request):
             return redirect('products')
 
     context = {'form': form}
-    return render(request, 'auctions/product_forms.html', context)
+    return render(request, 'auctions/create_product.html', context)
 
 def updateProduct(request, pk):
     product = Product.objects.get(id=pk)
