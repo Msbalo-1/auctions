@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.contrib import messages
 from .models import Profile
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -60,7 +61,25 @@ from .models import Profile
 
 
 
+def loginPage(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
 
+        try:
+            user = User.objects.get(username=username)
+        except:
+            print('Username dose not exit')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is None:
+            login(request, user)
+            return redirect('profile')
+        else:
+            print('Username or password does not exit')
+
+    return render(request, 'users/login.html')
 
 
 def profile(request, ):
