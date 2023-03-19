@@ -9,3 +9,13 @@ class signupForm(UserCreationForm):
         labels = {
             'first_name': 'Name'
         }
+
+
+
+    def __init__(self, *args, **kwargs):
+        super(signupForm, self).__init__(*args, **kwargs)
+
+        for key, value in self.fields.items():
+            value.widget.attrs.update({'class': 'form-control'})
+
+        # self.fields['title'].widget.attrs.update({'class': 'form-control'})
