@@ -3,65 +3,41 @@ from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.contrib import messages
 from .models import Profile
+from .form import signupForm
 from django.contrib.auth.models import User
 # Create your views here.
 
 
 
-#
-# def login_view(request):
-#     if request.method == "POST":
-#
-#         # Attempt to sign user in
-#         username = request.POST["username"]
-#         password = request.POST["password"]
-#         user = authenticate(request, username=username, password=password)
-#
-#         # Check if authentication successful
-#         if user is not None:
-#             login(request, user)
-#             return redirect(reverse("index"))
-#         else:
-#             messages.error("Invalid username and/or password.")
-#             return render(request, "auctions/login.html")
-#
-#     else:
-#         return render(request, "auctions/login.html")
-#
-#
-# def logout_view(request):
-#     logout(request)
-#     return redirect('auctions')
-#
-#
-# def register(request):
-#     if request.method == "POST":
-#         username = request.POST["username"]
-#         email = request.POST["email"]
-#
-#         # Ensure password matches confirmation
-#         password = request.POST["password"]
-#         confirmation = request.POST["confirmation"]
-#         if password != confirmation:
-#             messages.error("Passwords must match.")
-#             return render(request, "auctions/register.html")
-#
-#         # Attempt to create new user
-#         try:
-#             user = Profile.objects.create_user(username, email, password)
-#             user.save()
-#         except IntegrityError:
-#             return render(request, "auctions/register.html", {
-#                 "message": "Username already taken."
-#             })
-#         login(request, user)
-#         return redirect(reverse("index"))
-#     else:
-#         return render(request, "auctions/register.html")
+
+
+
+
+def signupPage(request):
+    form = signupForm
+    if request.method == 'POST':
+        form = signupForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            user.save()
+
+            messages.success(request, 'successfully created')
+            login(request, user)
+            return redirect('products')
+
+        else:
+            messages.error(request, 'An error occurred')
+    context = {'form': form}
+    return render(request, 'users/register.html', context)
 
 
 
 def loginPage(request):
+
+    if request.user.is_authenticated:
+        return redirect('products')
+
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -69,17 +45,26 @@ def loginPage(request):
         try:
             user = User.objects.get(username=username)
         except:
-            print('Username dose not exit')
+            messages.error(request, 'Username dose not exit')
 
         user = authenticate(request, username=username, password=password)
 
-        if user is None:
+        if user is not None:
             login(request, user)
-            return redirect('profile')
+            messages.success(request, 'successfully login')
+            return redirect('products')
         else:
-            print('Username or password does not exit')
+            messages.error(request, 'Username or password does not exit')
 
     return render(request, 'users/login.html')
+
+
+def logoutPage(request):
+    logout(request)
+    messages.success(request, 'logout successfully')
+    return redirect('login')
+
+
 
 
 def profile(request, ):
