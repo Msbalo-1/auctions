@@ -1,5 +1,49 @@
+{% extends "main.html" %}
+
 
 {% block content %}
+
+
+ <!-- Header Section -->
+    <div class="container-fluid bg-danger py-5 text-white">
+        <div class="row pt-5">
+            <div class="col-12 col-lg-10">
+                <h1 class="display-5 fw-bold ms-0 ps-0 ms-md-5 ps-md-5 pt-3">Product</h1>
+            </div>
+        </div>
+    </div>
+
+<div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">
+          <div class=" p-3 auction border border-outline-1">
+            <div class="auction-photo">
+              <img src="./static/images/live-auc1.png" alt="auction-1" class="img-fluid">
+            </div>
+            <div class="auction-details">
+              <h3 class="text-start fs-4">Brand New royal Enfield 250 CC For special Sale</h3>
+
+              <div class="auctioner my-3 d-flex justify-content-between">
+                <div class="user d-flex align-items-center">
+                  <img src="./static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">
+                  <p class="">By Sara Alexa</p>
+                </div>
+
+                <h4 class="text-danger">$6,000</h4>
+              </div>
+              <div class="auction-action d-flex align-items-center justify-content-between">
+
+                <button class="btn btn-md btn-danger"><a href="">EDIT</a></button>
+
+                <div class="action-btns d-flex justify-content-between">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
 
 <!--&lt;!&ndash; Main Section &ndash;&gt;-->
 <!--  <main class="settingsPage profile my-md">-->
@@ -9,9 +53,9 @@
 <!--          <div class="card text-center">-->
 <!--            <div class="card__body dev">-->
 <!--              <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-edit"></i> Edit</a>-->
-<!--              <img class="avatar avatar&#45;&#45;xl dev__avatar" src="https://avatars.githubusercontent.com/u/33843378" />-->
-<!--              <h2 class="dev__name">Dennis Ivanov</h2>-->
-<!--              <p class="dev__title">Expirance FullStack Developer, Youtuber and Instructor</p>-->
+<!--              <img class="img-fluid me-5 src="{{profile.profile_img.url}}" />-->
+<!--              <h2 class="">Dennis Ivanov</h2>-->
+<!--              <p class="text-start fs-4">Expirance FullStack Developer, Youtuber and Instructor</p>-->
 <!--              <p class="dev__location">Based in Florida, USA</p>-->
 
 <!--            </div>-->
