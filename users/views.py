@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
-from .form import signupForm
+from .form import signupForm, accountForm
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -66,9 +67,22 @@ def logoutPage(request):
 
 
 
+@login_required(login_url='login')
+def userAccount(request):
+    profile = request.user.profile
+    products = profile.product_set.all()
+    context = {'profile': profile, 'products': products}
+    return render(request, 'users/user_profile.html', context)
 
-def profile(request, ):
-    # profile = pass
-    # context = {'profile': profile}
-    return render(request, 'users/user_profile.html', )
+def editAccount(request):
+    profile = request.user.profile
+    form = accountForm(instance=profile)
 
+    if request.method == "POST":
+        form = accountForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Account was edited successfully')
+            return redirect('profile')
+    context = {'form': form}
+    return render(request, 'users/profile_form.html', context)

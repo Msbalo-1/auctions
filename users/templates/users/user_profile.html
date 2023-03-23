@@ -8,136 +8,56 @@
     <div class="container-fluid bg-danger py-5 text-white">
         <div class="row pt-5">
             <div class="col-12 col-lg-10">
-                <h1 class="display-5 fw-bold ms-0 ps-0 ms-md-5 ps-md-5 pt-3">Product</h1>
+                <h1 class="display-5 fw-bold ms-0 ps-0 ms-md-5 ps-md-5 pt-3">Account</h1>
+            </div>
+        </div>
+    </div>
+<div class="container-fluid mt-5 p-2">
+        <!-- multiple bid items should iterate over this block of code -->
+
+        <div class="row mx-0 mx-md-5 p-2">
+            <div class="col-12 border col-md-4 text-center">
+                <img src=" {{profile.profile_img.url}}" alt="auc1" class="img-fluid py-5">
+            </div>
+            <div class="col-12 col-md-8 border p-3">
+                <div class="auction-detail">
+                    <p class="fw-bold">NAME: <span class="bidding-price text-danger"> {{profile.full_name}}</span></p>
+                    <p class="fw-bold">EMAIL: <span class="bidding-price text-danger"> {{profile.email}}</span></p>
+                    <p class="fw-bold">USERNAME: <span class="bidding-price text-danger"> {{profile.username}}</span></p>
+                    <p class="fw-bold">LOCATION: <span class="bidding-price text-danger"> {{profile.location}}</span></p>
+                    <p class="fw-bold">ABOUT: <span class="bidding-price text-danger"> {{profile.about}}</span></p>
+                </div>
+                <div class="text-center text-md-start">
+                    <button type="submit" class="btn btn-success mb-3 px-3"><a href="{% url 'edit_account' %}">EDIT</a></button>
+                    <button type="submit" class="btn btn-danger mb-3 px-3"><a href="{% url 'logout' %}">LOGOUT</a></button>
+                </div>
             </div>
         </div>
     </div>
 
 <div class="col-12 col-md-6 col-lg-4 p-3 auction-card  text-center">
+    <div class="auction-action d-flex align-items-center justify-content-between">
+        <button type="submit" class="btn btn-success mb-3 px-3"><a href="{% url 'add_product' %}"><i class="im im-plus"></i> ADD PRODUCT</a></button>
+    </div>
+        {% for product in products %}
           <div class=" p-3 auction border border-outline-1">
             <div class="auction-photo">
-              <img src="./static/images/live-auc1.png" alt="auction-1" class="img-fluid">
+              <img src="{{ product.img.url}}" alt="auction-1" class="img-fluid">
+              <p class="fw-bold auction-time text-danger bg-white m-0 p-3 mx-auto">-124D :23H : 02M : 53S</p>
             </div>
             <div class="auction-details">
-              <h3 class="text-start fs-4">Brand New royal Enfield 250 CC For special Sale</h3>
-
+              <h3 class="text-start fs-4">{{product.title}}</h3>
               <div class="auctioner my-3 d-flex justify-content-between">
-                <div class="user d-flex align-items-center">
-                  <img src="./static/images/auction-authr1.png" alt="auction author" class="img-fluid me-3">
-                  <p class="">By Sara Alexa</p>
-                </div>
-
-                <h4 class="text-danger">$6,000</h4>
+                <h4 class="text-danger">${{product.price}}</h4>
               </div>
               <div class="auction-action d-flex align-items-center justify-content-between">
-
-                <button class="btn btn-md btn-danger"><a href="">EDIT</a></button>
-
-                <div class="action-btns d-flex justify-content-between">
-
-                </div>
+                <button type="submit" class="btn btn-success mb-3 px-3"><a href=""><i class="im im-edit"></i>EDIT</a></button>
+                <button type="submit" class="btn btn-danger mb-3 px-3 "><a href=""><i class="im im-x-mark-circle-o"></i>DELETE</a></button>
               </div>
             </div>
           </div>
+        {% endfor %}
         </div>
-
-
-
-
-
-<!--&lt;!&ndash; Main Section &ndash;&gt;-->
-<!--  <main class="settingsPage profile my-md">-->
-<!--    <div class="container">-->
-<!--      <div class="layout">-->
-<!--        <div class="column column&#45;&#45;1of3">-->
-<!--          <div class="card text-center">-->
-<!--            <div class="card__body dev">-->
-<!--              <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-edit"></i> Edit</a>-->
-<!--              <img class="img-fluid me-5 src="{{profile.profile_img.url}}" />-->
-<!--              <h2 class="">Dennis Ivanov</h2>-->
-<!--              <p class="text-start fs-4">Expirance FullStack Developer, Youtuber and Instructor</p>-->
-<!--              <p class="dev__location">Based in Florida, USA</p>-->
-
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="column column&#45;&#45;2of3">-->
-<!--          <div class="devInfo">-->
-<!--            <h3 class="devInfo__title">About Me</h3>-->
-<!--            <p class="devInfo__about">-->
-<!--              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex illum ipsum iusto consequatur. Totam,-->
-<!--              dolorum fugiat, debitis facere illo nostrum nesciunt maxime, deserunt enim voluptatibus modi natus velit-->
-<!--              voluptatum. Dicta eritatis exercitationem ut quos a placeat obcaecati? Architecto illum!-->
-<!--              <br />-->
-<!--              Amet consectetur adipisicing elit. Veritatis exercitationem ut quos a placeat obcaecati? Architecto-->
-<!--              illum, atque delectus nemo dolorem inventore ab facilis? Dolor placeat vel delectus ipsam ullam.-->
-<!--            </p>-->
-<!--          </div>-->
-
-
-<!--          <div class="settings">-->
-<!--            <h3 class="settings__title">Projects</h3>-->
-<!--            <a class="tag tag&#45;&#45;pill tag&#45;&#45;sub settings__btn tag&#45;&#45;lg" href="#"><i class="im im-plus"></i> Add Project</a>-->
-<!--          </div>-->
-
-<!--          <table class="settings__table">-->
-<!--            <tr>-->
-<!--              <td class="settings__thumbnail">-->
-<!--                <a href="single-project.html"><img src="images/project-a.png" alt="Project Thumbnail" /></a>-->
-<!--              </td>-->
-<!--              <td class="settings__tableInfo">-->
-<!--                <a href="single-project.html">Yoga Studio Landing Page</a>-->
-<!--                <p>-->
-<!--                  Consectetur adipisicing elit. Natus nam dolore aut sed vitae eos architecto unde tempore-->
-<!--                  exercitationem fugiat?...-->
-<!--                </p>-->
-<!--              </td>-->
-<!--              <td class="settings__tableActions">-->
-<!--                <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-edit"></i> Edit</a>-->
-<!--                <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-x-mark-circle-o"></i>-->
-<!--                  Delete</a>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td class="settings__thumbnail">-->
-<!--                <a href="single-project.html"><img src="images/project-b.png" alt="Project Thumbnail" /></a>-->
-<!--              </td>-->
-<!--              <td class="settings__tableInfo">-->
-<!--                <a href="single-project.html">DevSearch Website UI Design</a>-->
-<!--                <p>-->
-<!--                  Consectetur adipisicing elit. Natus nam dolore aut sed vitae eos architecto unde tempore-->
-<!--                  exercitationem fugiat?...-->
-<!--                </p>-->
-<!--              </td>-->
-<!--              <td class="settings__tableActions">-->
-<!--                <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-edit"></i> Edit</a>-->
-<!--                <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-x-mark-circle-o"></i>-->
-<!--                  Delete</a>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td class="settings__thumbnail">-->
-<!--                <a href="single-project.html"><img src="images/project-a.png" alt="Project Thumbnail" /></a>-->
-<!--              </td>-->
-<!--              <td class="settings__tableInfo">-->
-<!--                <a href="single-project.html">Portfolio Website Design</a>-->
-<!--                <p>-->
-<!--                  Consectetur adipisicing elit. Natus nam dolore aut sed vitae eos architecto unde tempore-->
-<!--                  exercitationem fugiat?...-->
-<!--                </p>-->
-<!--              </td>-->
-<!--              <td class="settings__tableActions">-->
-<!--                <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-edit"></i> Edit</a>-->
-<!--                <a class="tag tag&#45;&#45;pill tag&#45;&#45;main settings__btn" href="#"><i class="im im-x-mark-circle-o"></i>-->
-<!--                  Delete</a>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--          </table>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </main>-->
-
 
 
 {% endblock content %}
