@@ -15,7 +15,7 @@
             <div class="row py-5 justify-content-center">
                 <div class="col-10 col-md-6 signup-form px-5 py-2">
                     <div class="form-body">
-                        <form action="{% url 'edit_account' %}" method="POST" class="">
+                        <form action="{% url 'edit_account' %}" method="POST" class="" enctype="multipart/form-data">
                            {% csrf_token %}
                            <div class="vstack gap-3 m-0 p-0">
                             <div class="names d-grid gap-4">
