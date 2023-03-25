@@ -10,7 +10,7 @@ urlpatterns = [
     path("delete_product/<str:pk>/", views.deleteProduct, name="delete_product"),
 
 
-
+    path("dashboard/", views.dashboard, name="dashboard"),
     path("products/", views.auctions, name="products"),
     path("product/<str:pk>/", views.auction, name="product"),
 

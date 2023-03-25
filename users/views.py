@@ -25,7 +25,7 @@ def signupPage(request):
 
             messages.success(request, 'successfully created')
             login(request, user)
-            return redirect('products')
+            return redirect('profile')
 
         else:
             messages.error(request, 'An error occurred')
@@ -74,6 +74,9 @@ def userAccount(request):
     context = {'profile': profile, 'products': products}
     return render(request, 'users/user_profile.html', context)
 
+
+
+@login_required(login_url='login')
 def editAccount(request):
     profile = request.user.profile
     form = accountForm(instance=profile)
@@ -86,3 +89,6 @@ def editAccount(request):
             return redirect('profile')
     context = {'form': form}
     return render(request, 'users/profile_form.html', context)
+
+
+

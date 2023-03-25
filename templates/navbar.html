@@ -22,11 +22,8 @@
             <li class="nav-item mx-2">
               <a class="nav-link" href="#">Watch List</a>
             </li>
-            {% if request.user.is_authenticated %}
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="{% url 'add_product' %}">Create Listing</a>
-            </li>
-            {% endif %}
+
+
             <li class="nav-item dropdown mx-2">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Pages
@@ -44,7 +41,7 @@
           </ul>
           {% if request.user.is_authenticated %}
           <div class="top-control d-flex text-danger">
-            <a href="./dashboard.html">
+            <a href="{% url 'dashboard' %}">
 
               <button class="btn btn-md btn-danger my-3 mt-md-0">My Dashboard</button>
             </a>

@@ -12,7 +12,7 @@ def createUser(sender, instance, created, **kwargs):
             user=user,
             username=user.username,
             email=user.email,
-            full_name=user.first_name
+            full_name=user.first_name,
 
         )
 
