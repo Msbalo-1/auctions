@@ -27,6 +27,16 @@ a{
     border-radius: 15px;
 
 }
+
+img {
+  max-width: 500px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .auction-photo:hover{
     transform: scale(1.05);
     

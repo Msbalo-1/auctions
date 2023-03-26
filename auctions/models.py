@@ -1,6 +1,8 @@
 from django.db import models
 import uuid
 from users.models import Profile
+from PIL import Image
+
 class Product(models.Model):
     owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=250)
@@ -17,6 +19,23 @@ class Product(models.Model):
 
     class Meta:
         ordering = ['created', 'price', ]
+
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        image = Image.open(self.img.path)
+        image = image.resize((450, 300))
+        image.save(self.img.path)
+
+
+
+
+
+
+
+
+
 
 class Order(models.Model):
     customer = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)

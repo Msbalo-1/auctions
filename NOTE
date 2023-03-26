@@ -1,0 +1,24 @@
+########
+to resize images
+
+########
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # img = Image.open(self.img.path)
+        # if img.height > 300 or img.width > 300:
+        #     output_size = (300, 300)
+        #     img.thumbnail(output_size)
+        #     img.save(self.img.path)
+
+
+        # SIZE = 1200, 300
+        # if self.img:
+        #     image = Image.open(self.img.path)
+        #     image.thumbnail(SIZE, Image.LANCZOS)
+        #     image.save(self.img.path)
+
+       # image = Image.open(self.img.path)
+       # image = image.resize((450, 300))
+       # image.save(self.img.path)

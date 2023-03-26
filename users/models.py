@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 import uuid
+from PIL import Image
 
 
 # Create your models here.
@@ -19,6 +20,18 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.username
+
+
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        image = Image.open(self.profile_img.path)
+        image = image.resize((1000, 1000))
+        image.save(self.profile_img.path)
+
+
+
 
 
 
