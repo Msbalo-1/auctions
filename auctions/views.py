@@ -1,8 +1,11 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import ProductForms
+
+
 
 def index(request):
     profile = request.user.profile
@@ -12,8 +15,11 @@ def index(request):
     context = {'products': products, 'my_products': my_products}
     return render(request, "auctions/index.html", context)
 
+
+
 def auctions(request):
     products = Product.objects.all()
+
     context = {'products': products}
     return render(request, 'auctions/products.html', context)
 
@@ -22,7 +28,8 @@ def auctions(request):
 @login_required(login_url='login')
 def auction(request, pk):
     productobj = Product.objects.get(id=pk)
-    context = {'product': productobj}
+    remaining_time = productobj.target_date - datetime.now()
+    context = {'product': productobj, 'remaining_time': remaining_time}
     return render(request, 'auctions/single_product.html', context)
 
 
